@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { BsArrowRight } from "react-icons/bs";
 import { motion } from "framer-motion";
+import RightArrowSvg from "@/public/svgs/RightArrowSvg";
+import Button from "./ui/Button";
 
 const HeroSection = () => {
   return (
@@ -25,10 +26,7 @@ const HeroSection = () => {
           Live small-group coaching + official SAT prep. Trusted by Caribbean
           parents.
         </p>
-        <button className="bg-theme text-white text-[20px] px-4 py-2 rounded-[10px] font-normal flex items-center gap-2">
-          <BsArrowRight size={20} className="text-white font-semibold" /> Get
-          Started
-        </button>
+        <Button title="Get Started" />
         <div className="flex items-center gap-4">
           <div className="flex items-center">
             <Image

@@ -35,6 +35,9 @@ body {
   /*── SHADOWS ──────────────────────────────────────────────────*/
   --shadow-headerShadow: 0px 1px 4px 0px #00000021;
   --shadow-infoBoxShadow: 0px 0px 9px 0px #0000002b;
+  --shadow-courseBoxShadow: 0px 0px 3px 0px #0000002b;
+  --shadow-yearBoxShadow: 0px 0px 9px 0px #0000001f;
+  --shadow-webinarBoxShadow: 0px 0px 8px 0px #0000001a;
 }
 
 /* @layer utilities {

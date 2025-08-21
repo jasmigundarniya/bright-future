@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { BsArrowRight } from "react-icons/bs";
+import RightArrowSvg from "@/public/svgs/RightArrowSvg";
+import Button from "./ui/Button";
 
 const Header = () => {
   return (
-    <header className="shadow-headerShadow">
+    <header className="shadow-headerShadow sticky top-0 bg-white z-50">
       <div className="flex items-center justify-between px-5 py-[19.5px] container mx-auto">
         <div className="flex items-center gap-2">
           <Image
@@ -50,12 +51,8 @@ const Header = () => {
             Certificate
           </Link>
         </nav>
-        <Link
-          href="/enrollment"
-          className="bg-theme text-white text-[20px] px-4 py-2 rounded-[10px] font-normal flex items-center gap-2"
-        >
-          <BsArrowRight size={20} className="text-white font-semibold" />{" "}
-          Enrollment
+        <Link href="/enrollment">
+          <Button title="Enrollment" />
         </Link>
       </div>
     </header>
