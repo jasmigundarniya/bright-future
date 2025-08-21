@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --font-family: "League Spartan", sans-serif;
+}
+
+* {
+  font-family: var(--font-family), sans-serif;
+}
+
+body {
+  font-family: var(--font-family), sans-serif;
+}
+
+/* tailwind config */
+
+@theme {
+  /*── BREAKPOINTS ───────────────────────────────────────────────*/
+  --breakpoint-2xs: 300px;
+  --breakpoint-xxs: 375px;
+  --breakpoint-xs: 576px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-1xl: 1320px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1658px;
+
+  /*── COLORS ───────────────────────────────────────────────────*/
+  --color-theme: #f7b529;
+  --color-lightGray: #7e7e7e;
+  --color-darkBlack: #0e0900;
+
+  /*── SHADOWS ──────────────────────────────────────────────────*/
+  --shadow-headerShadow: 0px 1px 4px 0px #00000021;
+}
+
+/* @layer utilities {
+  .bg-darkReditient {
+    background-image: radial-gradient(
+      117.01% 117.01% at 50% 50%,
+      #1a1a1a 29.81%,
+      #595443 100%
+    );
+  }
+} */
+
+::-webkit-scrollbar {
+  display: none;
+}
