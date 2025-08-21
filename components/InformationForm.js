@@ -1,4 +1,5 @@
 "use client";
+import ProfileSvg from "@/public/svgs/ProfileSvg";
 import React from "react";
 import { useState } from "react";
 
@@ -17,21 +18,26 @@ const InformationForm = () => {
   };
 
   return (
-    <section className="bg-gray-50 px-8 md:px-20 py-12">
-      <div className="bg-white rounded-2xl shadow-md p-8 border border-gray-200">
-        <h2 className="text-2xl font-bold mb-6">
-          Your <span className="text-yellow-500">Information</span>
+    <section className="px-5 py-10 container mx-auto">
+      <div className="bg-white rounded-[15px] shadow-infoBoxShadow p-8">
+        <h2 className="text-[45px] text-darkBlack font-bold text-center mb-6">
+          Your <span className="text-theme">Information</span>
         </h2>
-        <form className="grid md:grid-cols-2 gap-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter name"
-            className="border p-3 rounded-lg"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <input
+        <form className="grid md:grid-cols-2 gap-5">
+          <div className="p-[10px] px-5 rounded-lg bg-[#F5F5F5] text-[18px] font-normal relative">
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter name"
+              className="placeholder:text-lightGray outline-none"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <div className="absolute right-5 top-1/2 translate-x-1/2">
+              <ProfileSvg />
+            </div>
+          </div>
+          {/* <input
             type="email"
             name="email"
             placeholder="Enter email address *"
@@ -54,7 +60,7 @@ const InformationForm = () => {
             className="border p-3 rounded-lg"
             value={formData.age}
             onChange={handleChange}
-          />
+          /> */}
 
           {/* Status Checkboxes */}
           <div className="col-span-2 space-y-2">
@@ -105,7 +111,7 @@ const InformationForm = () => {
             />
           </div>
 
-          <button className="col-span-2 bg-yellow-400 hover:bg-yellow-500 px-6 py-3 rounded-full font-semibold shadow mt-4">
+          <button className="col-span-2 bg-yellow-400 hover:bg-thetext-theme px-6 py-3 rounded-full font-semibold shadow mt-4">
             → Submit
           </button>
         </form>
