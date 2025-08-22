@@ -17,39 +17,39 @@ const Header = () => {
           />
         </div>
         <nav className="hidden md:flex gap-6 text-lightGray text-[20px] font-normal">
-          <Link href="/" className="text-theme underline underline-offset-8">
+          <a href="#home" className="text-theme underline underline-offset-8">
             Home
-          </Link>
-          <Link
-            href="/course-comparison"
+          </a>
+          <a
+            href="#course-comparison"
             className="hover:text-theme hover:underline hover:underline-offset-8 transition duration-300"
           >
             Course Comparison
-          </Link>
-          <Link
-            href="/instructor"
+          </a>
+          <a
+            href="#instructor"
             className="hover:text-theme hover:underline hover:underline-offset-8 transition duration-300"
           >
             Instructor
-          </Link>
-          <Link
-            href="/webinar"
+          </a>
+          <a
+            href="#webinar"
             className="hover:text-theme hover:underline hover:underline-offset-8 transition duration-300"
           >
             Webinar
-          </Link>
-          <Link
-            href="/happy-students"
+          </a>
+          <a
+            href="#happy-students"
             className="hover:text-theme hover:underline hover:underline-offset-8 transition duration-300"
           >
             Happy Students
-          </Link>
-          <Link
-            href="/certificate"
+          </a>
+          <a
+            href="#certificate"
             className="hover:text-theme hover:underline hover:underline-offset-8 transition duration-300"
           >
             Certificate
-          </Link>
+          </a>
         </nav>
         <Link href="/enrollment">
           <Button title="Enrollment" />

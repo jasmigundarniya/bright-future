@@ -8,6 +8,7 @@ import Image from "next/image";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import CheckCircleSvg from "@/public/svgs/CheckCircleSvg";
 import Button from "./ui/Button";
+import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
 
 const slides = [
   {
@@ -102,12 +103,14 @@ const highlights = [
   },
 ];
 
-const CourseComparison = () => {
+const CourseComparison = ({ id }) => {
   return (
-    <div className="container mx-auto px-5 py-10 relative">
-      <h2 className="text-[45px] text-darkBlack font-bold mb-4">
-        Course <span className="text-theme">Comparison</span>
-      </h2>
+    <section id={id} className="container mx-auto px-5 py-10 relative">
+      <ScrollAnimationWrapper direction="left">
+        <h2 className="text-[45px] text-darkBlack font-bold mb-4">
+          Course <span className="text-theme">Comparison</span>
+        </h2>
+      </ScrollAnimationWrapper>
 
       {/* Swiper with custom navigation */}
       <Swiper
@@ -118,149 +121,157 @@ const CourseComparison = () => {
         }}
         spaceBetween={30}
         slidesPerView={1}
-        className="rounded-xl"
+        className="rounded-[15px]"
       >
         {slides.map((slide, idx) => (
           <SwiperSlide key={idx}>
-            <div className="bg-[#FFF6E8] p-7 rounded-xl flex flex-col md:flex-row items-center gap-8">
+            <div className="bg-[#FFF6E8] p-7 rounded-[15px] grid grid-cols-1 md:grid-cols-2 items-center gap-8">
               {/* Left Content */}
-              <div className="flex-1 space-y-4">
-                <h3
-                  className={`text-[45px] font-bold text-darkBlack mb-0 ${
-                    slide?.id === 5 && "max-w-[377px] leading-tight mb-2"
-                  }`}
-                >
-                  {slide.title}
-                </h3>
-                {slide.subtitle && (
-                  <p
-                    className={`text-[20px] ${
-                      slide?.id === 5 ? "font-normal" : "font-medium"
-                    } text-darkBlack`}
+              <ScrollAnimationWrapper direction="left">
+                <div className="flex-1 space-y-4">
+                  <h3
+                    className={`text-[45px] font-bold text-darkBlack mb-0 ${
+                      slide?.id === 5 && "max-w-[377px] leading-tight mb-2"
+                    }`}
                   >
-                    {slide.subtitle}
-                  </p>
-                )}
+                    {slide.title}
+                  </h3>
+                  {slide.subtitle && (
+                    <p
+                      className={`text-[20px] mb-0 ${
+                        slide?.id === 5 ? "font-normal" : "font-medium"
+                      } text-darkBlack`}
+                    >
+                      {slide.subtitle}
+                    </p>
+                  )}
 
-                {/* Sections */}
-                {slide.sections && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                    {Object.entries(slide.sections).map(([section, items]) => (
-                      <div key={section}>
-                        <h4
-                          className={`${
-                            slide?.id === 5
-                              ? "font-semibold text-[24px]"
-                              : "font-medium text-[20px]"
-                          } text-darkBlack`}
-                        >
-                          {section}
-                        </h4>
-                        {slide?.id === 5 && (
-                          <p className="text-[20px] font-normal text-darkBlack">
-                            Recommended for:
-                          </p>
-                        )}
-                        <ul className="space-y-4 mt-2">
-                          {items.map((item, i) => (
-                            <li
-                              key={i}
-                              className="bg-white px-3 py-2 rounded-[10px] shadow-courseBoxShadow flex items-center gap-2 text-[13px] text-[#7E7E7E] font-normal"
+                  {/* Sections */}
+                  {slide.sections && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                      {Object.entries(slide.sections).map(
+                        ([section, items]) => (
+                          <div key={section}>
+                            <h4
+                              className={`${
+                                slide?.id === 5
+                                  ? "font-semibold text-[24px]"
+                                  : "font-medium text-[20px]"
+                              } text-darkBlack`}
                             >
-                              <CheckCircleSvg />
-                              <span className="mt-1">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
+                              {section}
+                            </h4>
+                            {slide?.id === 5 && (
+                              <p className="text-[20px] font-normal text-darkBlack">
+                                Recommended for:
+                              </p>
+                            )}
+                            <ul className="space-y-4 mt-2">
+                              {items.map((item, i) => (
+                                <li
+                                  key={i}
+                                  className="bg-white px-3 py-2 rounded-[10px] shadow-courseBoxShadow flex gap-2 text-[13px] text-[#7E7E7E] font-normal"
+                                >
+                                  <CheckCircleSvg />
+                                  <span className="mt-1 leading-3.5">
+                                    {item}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  )}
+
+                  {slide?.course && (
+                    <div className="space-y-6 mt-3">
+                      <div className="grid md:grid-cols-3 gap-6">
+                        {highlights.slice(0, 3).map((item, idx) => (
+                          <div
+                            key={idx}
+                            className={`flex items-center gap-4 bg-white rounded-[15px] shadow-courseBoxShadow p-4 `}
+                          >
+                            {/* Icon */}
+                            <div className="w-12 h-12 min-w-12 flex items-center justify-center rounded-[10px] bg-theme">
+                              <Image
+                                src={item.icon}
+                                alt={item.title}
+                                width={item.width}
+                                height={item.height}
+                                className="object-contain"
+                              />
+                            </div>
+
+                            {/* Text */}
+                            <div>
+                              <p className="text-[13px] font-normal text-[#7E7E7E]">
+                                {item.title}
+                              </p>
+                              <p className="text-sm font-medium text-darkBlack leading-3.5">
+                                {item.value}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                )}
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {highlights.slice(3).map((item, idx) => (
+                          <div
+                            key={idx}
+                            className={`flex items-center gap-4 bg-white rounded-[15px] shadow-courseBoxShadow p-4 `}
+                          >
+                            {/* Icon */}
+                            <div className="w-12 h-12 min-w-12 flex items-center justify-center rounded-[10px] bg-theme">
+                              <Image
+                                src={item.icon}
+                                alt={item.title}
+                                width={item.width}
+                                height={item.height}
+                                className="object-contain"
+                              />
+                            </div>
 
-                {slide?.course && (
-                  <div className="space-y-6 mt-3">
-                    <div className="grid md:grid-cols-3 gap-6">
-                      {highlights.slice(0, 3).map((item, idx) => (
-                        <div
-                          key={idx}
-                          className={`flex items-center gap-4 bg-white rounded-[15px] shadow-courseBoxShadow p-4 `}
-                        >
-                          {/* Icon */}
-                          <div className="w-12 h-12 min-w-12 flex items-center justify-center rounded-[10px] bg-theme">
-                            <Image
-                              src={item.icon}
-                              alt={item.title}
-                              width={item.width}
-                              height={item.height}
-                              className="object-contain"
-                            />
+                            {/* Text */}
+                            <div>
+                              <p className="text-[13px] font-normal text-[#7E7E7E]">
+                                {item.title}
+                              </p>
+                              <p className="text-sm font-medium text-darkBlack leading-3.5">
+                                {item.value}
+                              </p>
+                            </div>
                           </div>
-
-                          {/* Text */}
-                          <div>
-                            <p className="text-[13px] font-normal text-[#7E7E7E]">
-                              {item.title}
-                            </p>
-                            <p className="text-sm font-medium text-darkBlack">
-                              {item.value}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {highlights.slice(3).map((item, idx) => (
-                        <div
-                          key={idx}
-                          className={`flex items-center gap-4 bg-white rounded-[15px] shadow-courseBoxShadow p-4 `}
-                        >
-                          {/* Icon */}
-                          <div className="w-12 h-12 min-w-12 flex items-center justify-center rounded-[10px] bg-theme">
-                            <Image
-                              src={item.icon}
-                              alt={item.title}
-                              width={item.width}
-                              height={item.height}
-                              className="object-contain"
-                            />
-                          </div>
+                  )}
 
-                          {/* Text */}
-                          <div>
-                            <p className="text-[13px] font-normal text-[#7E7E7E]">
-                              {item.title}
-                            </p>
-                            <p className="text-sm font-medium text-darkBlack">
-                              {item.value}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                  {slide?.lastMsg && (
+                    <p className="text-[20px] font-medium text-darkBlack mt-4">
+                      {slide?.lastMsg}
+                    </p>
+                  )}
+
+                  <div className={`${slide?.id === 1 ? "mt-5" : "mt-8"}`}>
+                    <Button title="Tap To Book" />
                   </div>
-                )}
-
-                {slide?.lastMsg && (
-                  <p className="text-[20px] font-medium text-darkBlack mt-6">
-                    {slide?.lastMsg}
-                  </p>
-                )}
-
-                <div className={`${slide?.id === 1 ? "mt-5" : "mt-8"}`}>
-                  <Button title="Tap To Book" />
                 </div>
-              </div>
+              </ScrollAnimationWrapper>
 
               {/* Right Image */}
-              <div className="flex-1">
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  width={617}
-                  height={393}
-                  className="rounded-lg object-cover w-full"
-                />
-              </div>
+              <ScrollAnimationWrapper direction="right">
+                <div className="flex-1">
+                  <Image
+                    src={slide.image}
+                    alt={slide.title}
+                    width={617}
+                    height={393}
+                    className="rounded-lg object-cover w-full"
+                  />
+                </div>
+              </ScrollAnimationWrapper>
             </div>
           </SwiperSlide>
         ))}
@@ -273,7 +284,7 @@ const CourseComparison = () => {
       <div className="custom-next absolute top-1/2 -right-12 z-10 cursor-pointer border border-theme bg-theme text-white rounded-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-white hover:text-theme transition">
         <MdKeyboardArrowRight size={35} />
       </div>
-    </div>
+    </section>
   );
 };
 

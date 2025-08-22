@@ -144,7 +144,7 @@ const InformationForm = () => {
                   <p className="font-medium text-[16px] text-darkBlack">
                     Student Academic Status *
                   </p>
-                  <div className="flex flex-wrap gap-10">
+                  <div className="flex flex-wrap gap-x-10 gap-y-2">
                     {statusOptions.map((opt) => {
                       const isChecked = values.status.includes(opt.value);
                       return (

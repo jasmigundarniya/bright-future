@@ -12,6 +12,10 @@ body {
   font-family: var(--font-family), sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* tailwind config */
 
 @theme {
@@ -39,16 +43,6 @@ body {
   --shadow-yearBoxShadow: 0px 0px 9px 0px #0000001f;
   --shadow-webinarBoxShadow: 0px 0px 8px 0px #0000001a;
 }
-
-/* @layer utilities {
-  .bg-darkReditient {
-    background-image: radial-gradient(
-      117.01% 117.01% at 50% 50%,
-      #1a1a1a 29.81%,
-      #595443 100%
-    );
-  }
-} */
 
 ::-webkit-scrollbar {
   display: none;

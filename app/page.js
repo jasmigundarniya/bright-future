@@ -7,6 +7,10 @@ import CourseComparison from "@/components/CourseComparison";
 import VideoSection from "@/components/VideoSection";
 import MeetCoach from "@/components/MeetCoach";
 import Webinar from "@/components/Webinar";
+import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
+import Certified from "@/components/CertifiedImg";
+import Certificate from "@/components/Certificate";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
@@ -15,12 +19,17 @@ const Home = () => {
         <MdOutlineWhatsapp size={36} color="white" />
       </div>
       <Header />
-      <HeroSection />
-      <InformationForm />
-      <CourseComparison />
+      <HeroSection id="home" />
+      <ScrollAnimationWrapper direction="bottom">
+        <InformationForm />
+      </ScrollAnimationWrapper>
+      <CourseComparison id="course-comparison" />
       <VideoSection />
-      <MeetCoach />
-      <Webinar />
+      <MeetCoach id="instructor" />
+      <Webinar id="webinar" />
+      <Certificate />
+      <Certified />
+      <Footer />
     </div>
   );
 };

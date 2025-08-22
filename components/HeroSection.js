@@ -2,12 +2,14 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import RightArrowSvg from "@/public/svgs/RightArrowSvg";
 import Button from "./ui/Button";
 
-const HeroSection = () => {
+const HeroSection = ({ id }) => {
   return (
-    <section className="px-5 py-16 flex flex-col md:flex-row items-center justify-between container mx-auto">
+    <section
+      id={id}
+      className="px-5 py-16 flex flex-col md:flex-row gap-5 items-center justify-between container mx-auto"
+    >
       {/* Left Side Content */}
       <motion.div
         className="max-w-[642px] space-y-7"
