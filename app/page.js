@@ -16,7 +16,7 @@ import StudentReview from "@/components/StudentReview";
 const Home = () => {
   return (
     <div>
-      <div className="w-[65px] h-[65px] bg-[#25D366] flex items-center justify-center rounded-[10px] fixed bottom-10 right-10 z-40">
+      <div className="md:w-[65px] md:h-[65px] w-[56px] h-[56px] bg-[#25D366] flex items-center justify-center rounded-[10px] fixed bottom-10 right-10 z-40">
         <MdOutlineWhatsapp size={36} color="white" />
       </div>
       <Header />
