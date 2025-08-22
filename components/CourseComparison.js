@@ -105,9 +105,9 @@ const highlights = [
 
 const CourseComparison = ({ id }) => {
   return (
-    <section id={id} className="container mx-auto px-5 py-10 relative">
+    <section id={id} className="container mx-auto px-5 py-8 md:py-10 relative">
       <ScrollAnimationWrapper direction="left">
-        <h2 className="text-[45px] text-darkBlack font-bold mb-4">
+        <h2 className="md:text-[45px] text-[25px] text-center md:text-start text-darkBlack font-bold mb-4">
           Course <span className="text-theme">Comparison</span>
         </h2>
       </ScrollAnimationWrapper>
@@ -124,12 +124,12 @@ const CourseComparison = ({ id }) => {
       >
         {slides.map((slide, idx) => (
           <SwiperSlide key={idx}>
-            <div className="bg-[#FFF6E8] p-7 rounded-[15px] grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+            <div className="bg-[#FFF6E8] p-7 rounded-[15px] grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
               {/* Left Content */}
               <ScrollAnimationWrapper direction="left">
                 <div className="flex-1 space-y-4">
                   <h3
-                    className={`text-[45px] font-bold text-darkBlack mb-0 ${
+                    className={`md:text-[45px] text-[25px] font-bold text-darkBlack mb-0 ${
                       slide?.id === 5 && "max-w-[377px] leading-tight mb-2"
                     }`}
                   >
@@ -165,7 +165,7 @@ const CourseComparison = ({ id }) => {
                                 Recommended for:
                               </p>
                             )}
-                            <ul className="space-y-4 mt-2">
+                            <ul className="md:space-y-4 space-y-3 mt-2">
                               {items.map((item, i) => (
                                 <li
                                   key={i}
@@ -185,8 +185,8 @@ const CourseComparison = ({ id }) => {
                   )}
 
                   {slide?.course && (
-                    <div className="space-y-6 mt-3">
-                      <div className="grid md:grid-cols-3 gap-6">
+                    <div className="md:space-y-6 space-y-4 mt-3">
+                      <div className="grid md:grid-cols-3 md:gap-6 gap-4">
                         {highlights.slice(0, 3).map((item, idx) => (
                           <div
                             key={idx}
@@ -215,7 +215,7 @@ const CourseComparison = ({ id }) => {
                           </div>
                         ))}
                       </div>
-                      <div className="grid md:grid-cols-2 gap-6">
+                      <div className="grid md:grid-cols-2 md:gap-6 gap-4">
                         {highlights.slice(3).map((item, idx) => (
                           <div
                             key={idx}

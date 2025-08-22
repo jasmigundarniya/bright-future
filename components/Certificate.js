@@ -7,8 +7,8 @@ const Certificate = ({ id }) => {
     <section id={id} className="px-5 py-10 container mx-auto">
       <div className="bg-white rounded-[10px] shadow-certificateShadow grid xl:grid-cols-2 items-center overflow-hidden">
         <ScrollAnimationWrapper direction="left">
-          <div className="px-10 py-5">
-            <h2 className="sm:text-[45px] text-2xl  text-darkBlack font-bold">
+          <div className="md:px-10 md:py-5 px-3 py-3">
+            <h2 className="md:text-[45px] text-[25px] text-2xl text-darkBlack font-bold mb-2 md:mb-0">
               Earn a Course <span className="text-theme">Certificate</span>
             </h2>
             <p className="text-lightGray sm:text-[20px] text-[16px] 2xl:leading-8 leading-7">
@@ -32,7 +32,7 @@ const Certificate = ({ id }) => {
               {" "}
             </div>
             {/* <div className="bg-gradient-to-r from-transparent from-30% to-[#FFF5E1] to-90% "> */}
-            <div className="p-3 relative z-10">
+            <div className="md:p-3 p-1 relative z-10">
               <Image
                 src={CertificateImg}
                 alt="Certificate"

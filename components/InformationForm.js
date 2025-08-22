@@ -41,9 +41,9 @@ const InformationForm = () => {
 
   return (
     <section className="px-5 container mx-auto">
-      <div className="px-5 py-10 relative">
+      <div className="md:px-5 px-3 py-8 md:py-10 relative">
         <div className="bg-white rounded-[15px] shadow-infoBoxShadow p-8 w-full relative z-10">
-          <h2 className="text-[45px] text-darkBlack font-bold text-center mb-4">
+          <h2 className="md:text-[45px] text-[25px] text-darkBlack font-bold text-center mb-4">
             Your <span className="text-theme">Information</span>
           </h2>
 
@@ -63,7 +63,7 @@ const InformationForm = () => {
             }}
           >
             {({ values, setFieldValue }) => (
-              <Form className="grid md:grid-cols-2 gap-5">
+              <Form className="md:grid md:grid-cols-2 flex flex-col gap-5">
                 {/* Name */}
                 <div>
                   <div className="p-[10px] px-4 rounded-lg bg-[#F5F5F5] text-[18px] font-normal relative">

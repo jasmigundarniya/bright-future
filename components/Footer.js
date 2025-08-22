@@ -11,13 +11,13 @@ import ScrollAnimationWrapper from "./ScrollAnimationWrapper";
 const Footer = () => {
   return (
     <footer className="bg-[#F8F8F8]">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 divide-y md:divide-y-0 md:divide-x divide-[#000000] container mx-auto px-5">
-        <div className="flex items-center justify-center py-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-[#000000] container mx-auto px-5">
+        <div className="flex items-center justify-center py-5 md:py-10">
           <ScrollAnimationWrapper direction="left">
             <Image src={logo} alt="bright futures logo" />
           </ScrollAnimationWrapper>
         </div>
-        <div className="space-y-4 py-10 flex flex-col items-center justify-center">
+        <div className="space-y-4 py-5 md:py-10 flex flex-col items-center justify-center">
           <p className="text-darkBlack text-[20px] md:text-[25px] font-medium text-center ">
             Find Us On Social Media
           </p>
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
         </div>{" "}
         <ScrollAnimationWrapper direction="right">
-          <div className="space-y-4 text-lightGray py-10">
+          <div className="space-y-4 text-lightGray py-5 md:py-10">
             <p className="text-darkBlack text-[20px] lg:text-[25px] font-medium text-center ">
               We're Always Happy to Help
             </p>

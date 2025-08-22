@@ -59,7 +59,7 @@ const VideoSection = () => {
               onTimeUpdate={handleTimeUpdate}
               onLoadedMetadata={handleLoadedMetadata}
               controls={false}
-              className="w-full h-[609px] object-cover rounded-lg"
+              className="w-full lg:h-[609px] object-cover rounded-lg"
             >
               <source src="/videos/online-class.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -78,18 +78,18 @@ const VideoSection = () => {
             </button>
 
             {/* Custom Progress Bar */}
-            <div className="absolute bottom-4 left-0 right-0 mx-7">
-              <div className="w-full h-3 bg-[#D9D9D963] rounded-[25px]">
+            <div className="absolute bottom-4 left-0 right-0 mx-3 md:mx-7">
+              <div className="w-full md:h-3 h-[3px] bg-[#D9D9D963] rounded-[25px]">
                 <div
-                  className="h-3 bg-theme transition-all duration-200 rounded-[25px]"
+                  className="md:h-3 h-[3px] bg-theme transition-all duration-200 rounded-[25px]"
                   style={{ width: `${progress}%` }}
                 />
               </div>
               <div className="flex items-center justify-between mt-2">
-                <span className="text-white text-[20px] font-normal">
+                <span className="text-white text-[13px] md:text-[20px] font-normal">
                   {currentTime}
                 </span>
-                <span className="text-white text-[20px] font-normal">
+                <span className="text-white text-[13px] md:text-[20px] font-normal">
                   {duration}
                 </span>
               </div>
@@ -99,7 +99,7 @@ const VideoSection = () => {
 
         {/* Description */}
         <ScrollAnimationWrapper direction="right">
-          <div className="p-4 text-[#7E7E7E] text-[20px] font-normal">
+          <div className="md:p-4 p-2 text-[#7E7E7E] text-[13px] md:text-[20px] font-normal">
             Your journey to a top SAT score starts here. We combine expert-led
             instruction with collaborative learning to help you master every
             section of the exam and open the door to a bright future.

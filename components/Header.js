@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Button from "./ui/Button";
 import MenuSvg from "@/public/svgs/MenuSvg";
+import AnimatedSidebar from "./ui/Sidebar";
 
 const Header = () => {
   return (
@@ -55,9 +56,7 @@ const Header = () => {
         <Link href="/enrollment" className="hidden lg:flex">
           <Button title="Enrollment" />
         </Link>
-        <button className="lg:hidden flex items-center justify-center bg-theme rounded-[10px] w-[45px] h-[45px]">
-          <MenuSvg />
-        </button>
+       <AnimatedSidebar />
       </div>
     </header>
   );

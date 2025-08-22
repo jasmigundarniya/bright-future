@@ -12,7 +12,7 @@ const CountdownTimer = ({ targetDate }) => {
   }, []);
 
   const AnimatedBox = ({ value, label }) => (
-    <div className="flex flex-col items-center justify-end bg-white rounded-[10px] shadow-webinarBoxShadow w-[195px] h-[119px]">
+    <div className="flex flex-col items-center justify-end bg-white rounded-[10px] shadow-webinarBoxShadow lg:w-[195px] lg:h-[119px] w-[66px] h-[66px]">
       <AnimatePresence mode="popLayout">
         <motion.div
           key={value}
@@ -21,13 +21,13 @@ const CountdownTimer = ({ targetDate }) => {
           exit={{ opacity: 0, scale: 0.2 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         >
-          <span className="text-[45px] font-semibold text-darkBlack">
+          <span className="text-[26px] lg:text-[45px] font-semibold text-darkBlack">
             {value}
           </span>
         </motion.div>
       </AnimatePresence>
 
-      <span className="text-[18px] font-semibold bg-theme text-white px-2 py-1 uppercase w-full text-center rounded-b-[10px]">
+      <span className="text-[11px] lg:text-[18px] font-semibold bg-theme text-white px-2 py-1 uppercase w-full text-center rounded-b-[10px]">
         {label}
       </span>
     </div>
@@ -38,19 +38,19 @@ const CountdownTimer = ({ targetDate }) => {
       return <span className="text-2xl font-bold">Webinar Started!</span>;
     }
     return (
-      <div className="flex gap-3 justify-center items-center">
+      <div className="flex gap-1 md:gap-3 justify-center items-center">
         <ScrollAnimationWrapper direction="left">
-          <div className="flex gap-3 justify-center items-center">
+          <div className="flex gap-1 md:gap-3 justify-center items-center">
             <AnimatedBox value={days} label="DAYS" />
-            <span className="text-[45px] font-semibold text-darkBlack">:</span>
+            <span className="text-[26px] lg:text-[45px] font-semibold text-darkBlack">:</span>
             <AnimatedBox value={hours} label="HOURS" />
           </div>
         </ScrollAnimationWrapper>
-        <span className="text-[45px] font-semibold text-darkBlack">:</span>
+        <span className="text-[26px] lg:text-[45px] font-semibold text-darkBlack">:</span>
         <ScrollAnimationWrapper direction="right">
-          <div className="flex gap-3 justify-center items-center">
+          <div className="flex gap-1 md:gap-3 justify-center items-center">
             <AnimatedBox value={minutes} label="MINUTES" />
-            <span className="text-[45px] font-semibold text-darkBlack">:</span>
+            <span className="text-[26px] lg:text-[45px] font-semibold text-darkBlack">:</span>
             <AnimatedBox value={seconds} label="SECONDS" />
           </div>
         </ScrollAnimationWrapper>

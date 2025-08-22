@@ -50,3 +50,30 @@ html {
 ::-webkit-scrollbar {
   display: none;
 }
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+.webinar-custom-swiper .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: #ffffff !important;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px 0px #0000002b;
+  opacity: 3 !important;
+}
+
+.webinar-custom-swiper .swiper-pagination-bullet-active {
+  background: #f7b529 !important;
+  box-shadow: 0px 0px 4px 0px #0000002b;
+  transform: scale(1.1);
+}
+
+.webinar-custom-swiper .swiper-pagination {
+  position: relative !important;
+  margin-top: 16px;
+  text-align: center;
+}

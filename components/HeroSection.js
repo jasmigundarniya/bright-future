@@ -8,23 +8,23 @@ const HeroSection = ({ id }) => {
   return (
     <section
       id={id}
-      className="px-5 py-12 flex flex-col md:flex-row gap-10 items-center justify-between container mx-auto"
+      className="px-5 lg:py-12 py-8 flex flex-col lg:flex-row gap-10 items-center justify-between container mx-auto"
     >
       {/* Left Side Content */}
       <motion.div
-        className="max-w-[642px] space-y-7"
+        className="md:max-w-[642px] md:space-y-7 space-y-4"
         initial={{ scale: 0, opacity: 0, x: -100, y: -100 }}
         animate={{ scale: 1, opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h1 className="xl:text-[65px] text-[37px] font-bold text-darkBlack leading-[52px] xl:leading-tight">
+        <h1 className="xl:text-[65px] text-[36px] font-bold text-darkBlack leading-[52px] xl:leading-tight">
           Turn CSEC Strengths Into{" "}
           <span className="bg-[#FFF5E1] rounded-[10px] text-theme px-4 py-3 text-nowrap">
             Study Abroad
           </span>{" "}
           Opportunities
         </h1>
-        <p className="text-lightGray text-[20px] font-normal">
+        <p className="text-lightGray text-[16px] md:text-[20px] font-normal">
           Live small-group coaching + official SAT prep. Trusted by Caribbean
           parents.
         </p>
@@ -60,7 +60,7 @@ const HeroSection = ({ id }) => {
 
       {/* Right Side Images */}
       <motion.div
-        className="flex items-center gap-5 xl:gap-10 mt-10 md:mt-0"
+        className="flex items-center gap-5 xl:gap-10"
         initial={{ x: 200, opacity: 0 }}
         animate={{
           x: [200, -400, 0], // comes from right → moves slightly left → settles
@@ -72,12 +72,13 @@ const HeroSection = ({ id }) => {
           ease: "easeInOut",
         }}
       >
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-8 md:gap-12">
           <Image
             src="/assets/star1.png"
             alt="student"
             width={94}
             height={107}
+            className="w-[50px] h-[50px] md:w-[84px] md:h-[76px]"
           />
           <Image
             src="/assets/student1.png"
@@ -86,14 +87,20 @@ const HeroSection = ({ id }) => {
             height={444}
           />
         </div>
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex flex-col items-center gap-8 md:gap-12">
           <Image
             src="/assets/student2.png"
             alt="student"
             width={306}
             height={444}
           />
-          <Image src="/assets/star2.png" alt="student" width={38} height={43} />
+          <Image
+            src="/assets/star2.png"
+            alt="student"
+            width={38}
+            height={43}
+            className="w-[20px] h-[20px] md:w-[38px] md:h-[35px]"
+          />
         </div>
       </motion.div>
     </section>

@@ -28,7 +28,7 @@ const Home = () => {
       <VideoSection />
       <MeetCoach id="instructor" />
       <Webinar id="webinar" />
-       <StudentReview />
+      <StudentReview />
       <Certificate id="certificate" />
       <ScrollAnimationWrapper direction="bottom">
         <Certified />

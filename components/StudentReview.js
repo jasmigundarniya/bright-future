@@ -92,12 +92,13 @@ const review = [
     rating: "5.0",
   },
 ];
+
 const StudentReview = () => {
   return (
-    <section className="px-5 py-10 container mx-auto ">
-      <div className="flex items-end sm:items-center justify-between sm:flex-row flex-col mb-[20px] ">
+    <section className="px-5 md:py-8 container mx-auto">
+      <div className="flex items-center justify-between mb-[20px] ">
         <ScrollAnimationWrapper direction="left">
-          <h2 className="text-[45px] text-darkBlack font-bold">
+          <h2 className="md:text-[45px] text-[25px] text-darkBlack font-bold">
             Happy <span className="text-theme">Students</span>
           </h2>
         </ScrollAnimationWrapper>
@@ -106,71 +107,76 @@ const StudentReview = () => {
           <div className="custom-prev cursor-pointer border border-theme bg-theme text-white rounded-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-white hover:text-theme transition">
             <MdKeyboardArrowLeft size={38} />
           </div>
-          <div className="custom-next  cursor-pointer border border-theme bg-theme text-white rounded-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-white hover:text-theme transition">
+          <div className="custom-next cursor-pointer border border-theme bg-theme text-white rounded-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-white hover:text-theme transition">
             <MdKeyboardArrowRight size={35} />
           </div>
         </div>
       </div>
-      <Swiper
-        slidesPerView={3}
-        grid={{
-          rows: 2,
-          fill: "row",
-        }}
-        spaceBetween={10}
-        breakpoints={{
-          320: { slidesPerView: 1, grid: { rows: 1 } },
-          640: { slidesPerView: 2, grid: { rows: 2 } },
-          1024: { slidesPerView: 3, grid: { rows: 2 } },
-        }}
-        modules={[Grid, Navigation]}
-        navigation={{
-          prevEl: ".custom-prev",
-          nextEl: ".custom-next",
-        }}
-      >
-        {review.map((item, i) => (
-          <SwiperSlide key={i} className="p-2 ">
-            <div className="rounded-[15px] bg-[#FFF] shadow-reviewBoxShadow text-[#1E1E1E] p-[22px] h-full ">
-              {/* Quote & Title */}
-              <div className="flex items-center gap-4 justify-between mb-5">
-                <Image src={left_double_quotation} alt="" />
-                <p className="leading-[22px] text-[16px]">{item.head}</p>
-              </div>
 
-              {/* Review text */}
-              <p className="leading-[27px] text-[18px] mb-6">{item.review}</p>
+      <ScrollAnimationWrapper direction="right">
+        <Swiper
+          slidesPerView={3}
+          grid={{
+            rows: 2,
+            fill: "row",
+          }}
+          spaceBetween={10}
+          breakpoints={{
+            320: { slidesPerView: 1, grid: { rows: 2 } },
+            640: { slidesPerView: 1, grid: { rows: 2 } },
+            1024: { slidesPerView: 2, grid: { rows: 2 } },
+            1280: { slidesPerView: 3, grid: { rows: 2 } },
+          }}
+          modules={[Grid, Navigation]}
+          navigation={{
+            prevEl: ".custom-prev",
+            nextEl: ".custom-next",
+          }}
+        >
+          {review.map((item, i) => (
+            <SwiperSlide key={i} className="p-2 !h-auto">
+              <div className="rounded-[15px] bg-[#FFF] shadow-reviewBoxShadow text-[#1E1E1E] p-[22px] h-full flex flex-col justify-between gap-2">
+                <div>
+                  <div className="flex items-center gap-4 justify-between mb-5">
+                    <Image src={left_double_quotation} alt="" />
+                    <p className="leading-[22px] text-[16px]">{item.head}</p>
+                  </div>
 
-              {/* Profile + Rating */}
-              <div className="flex items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={item.profileImg}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="rounded-full"
-                  />
-                  <div>
-                    <h3 className="text-[20px] font-semibold mt-1">
-                      {item.name}
-                    </h3>
-                    <p className="text-[14px] leading-[17px] font-normal">
-                      {item.collage}
-                    </p>
+                  <p className="leading-[27px] text-[18px] mb-3">
+                    {item.review}
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src={item.profileImg}
+                      alt=""
+                      width={60}
+                      height={60}
+                      className="w-[50px] h-[50px] md:w-[60px] md:h-[60px]"
+                    />
+                    <div>
+                      <h3 className="text-[20px] font-semibold mt-1">
+                        {item.name}
+                      </h3>
+                      <p className="text-[14px] leading-[17px] font-normal">
+                        {item.collage}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="bg-[#EDEDED] flex items-center gap-[5px] px-1 pe-2 md:pe-[10px] md:px-[8px] rounded-[5px]">
+                    <Image src={kid_star} alt="img" />
+                    <span className="pt-1 md:leading-[28px] text-[12px] md:text-[18px]">
+                      {item.rating}
+                    </span>
                   </div>
                 </div>
-                <div className="bg-[#EDEDED] flex items-center gap-[5px] px-[8px] rounded-[5px]">
-                  <Image src={kid_star} alt="" />
-                  <span className="pt-1 leading-[28px] text-[18px]">
-                    {item.rating}
-                  </span>
-                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </ScrollAnimationWrapper>
     </section>
   );
 };
