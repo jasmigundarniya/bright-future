@@ -1,22 +1,23 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import RightArrowSvg from "@/public/svgs/RightArrowSvg";
 import Button from "./ui/Button";
+import MenuSvg from "@/public/svgs/MenuSvg";
 
 const Header = () => {
   return (
     <header className="shadow-headerShadow sticky top-0 bg-white z-50">
-      <div className="flex items-center justify-between px-5 py-[19.5px] container mx-auto">
+      <div className="flex items-center justify-between px-5 py-[9px] lg:py-[19.5px] container mx-auto">
         <div className="flex items-center gap-2">
           <Image
             src="/assets/logo.png"
             alt="Bright Futures"
             width={109}
             height={51}
+            className="lg:w-[109px] lg:h-[51px] w-[100px] h-[46px]"
           />
         </div>
-        <nav className="hidden md:flex gap-6 text-lightGray text-[20px] font-normal">
+        <nav className="hidden lg:flex gap-6 text-lightGray text-[16px] xl:text-[20px] font-normal">
           <a href="#home" className="text-theme underline underline-offset-8">
             Home
           </a>
@@ -51,9 +52,12 @@ const Header = () => {
             Certificate
           </a>
         </nav>
-        <Link href="/enrollment">
+        <Link href="/enrollment" className="hidden lg:flex">
           <Button title="Enrollment" />
         </Link>
+        <button className="lg:hidden flex items-center justify-center bg-theme rounded-[10px] w-[45px] h-[45px]">
+          <MenuSvg />
+        </button>
       </div>
     </header>
   );

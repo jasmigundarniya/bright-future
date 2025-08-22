@@ -11,6 +11,7 @@ import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 import Certified from "@/components/CertifiedImg";
 import Certificate from "@/components/Certificate";
 import Footer from "@/components/Footer";
+import StudentReview from "@/components/StudentReview";
 
 const Home = () => {
   return (
@@ -27,8 +28,11 @@ const Home = () => {
       <VideoSection />
       <MeetCoach id="instructor" />
       <Webinar id="webinar" />
-      <Certificate />
-      <Certified />
+       <StudentReview />
+      <Certificate id="certificate" />
+      <ScrollAnimationWrapper direction="bottom">
+        <Certified />
+      </ScrollAnimationWrapper>
       <Footer />
     </div>
   );

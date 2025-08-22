@@ -112,7 +112,6 @@ const CourseComparison = ({ id }) => {
         </h2>
       </ScrollAnimationWrapper>
 
-      {/* Swiper with custom navigation */}
       <Swiper
         modules={[Navigation]}
         navigation={{
@@ -278,11 +277,13 @@ const CourseComparison = ({ id }) => {
       </Swiper>
 
       {/* Custom arrows */}
-      <div className="custom-prev absolute top-1/2 -left-12 z-10 cursor-pointer border border-theme bg-theme text-white rounded-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-white hover:text-theme transition">
-        <MdKeyboardArrowLeft size={38} />
-      </div>
-      <div className="custom-next absolute top-1/2 -right-12 z-10 cursor-pointer border border-theme bg-theme text-white rounded-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-white hover:text-theme transition">
-        <MdKeyboardArrowRight size={35} />
+      <div className="hidden 4xl:block">
+        <div className="custom-prev absolute top-1/2 -left-12 z-10 cursor-pointer border border-theme bg-theme text-white rounded-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-white hover:text-theme transition">
+          <MdKeyboardArrowLeft size={38} />
+        </div>
+        <div className="custom-next absolute top-1/2 -right-12 z-10 cursor-pointer border border-theme bg-theme text-white rounded-[10px] w-[40px] h-[40px] flex items-center justify-center hover:bg-white hover:text-theme transition">
+          <MdKeyboardArrowRight size={35} />
+        </div>
       </div>
     </section>
   );

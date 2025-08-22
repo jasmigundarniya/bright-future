@@ -8,7 +8,7 @@ const HeroSection = ({ id }) => {
   return (
     <section
       id={id}
-      className="px-5 py-16 flex flex-col md:flex-row gap-5 items-center justify-between container mx-auto"
+      className="px-5 py-12 flex flex-col md:flex-row gap-10 items-center justify-between container mx-auto"
     >
       {/* Left Side Content */}
       <motion.div
@@ -17,9 +17,9 @@ const HeroSection = ({ id }) => {
         animate={{ scale: 1, opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h1 className="text-[65px] font-bold text-darkBlack leading-tight">
+        <h1 className="xl:text-[65px] text-[37px] font-bold text-darkBlack leading-[52px] xl:leading-tight">
           Turn CSEC Strengths Into{" "}
-          <span className="bg-[#FFF5E1] rounded-[10px] text-theme px-4 py-3">
+          <span className="bg-[#FFF5E1] rounded-[10px] text-theme px-4 py-3 text-nowrap">
             Study Abroad
           </span>{" "}
           Opportunities
@@ -60,7 +60,7 @@ const HeroSection = ({ id }) => {
 
       {/* Right Side Images */}
       <motion.div
-        className="flex items-center gap-10 mt-10 md:mt-0"
+        className="flex items-center gap-5 xl:gap-10 mt-10 md:mt-0"
         initial={{ x: 200, opacity: 0 }}
         animate={{
           x: [200, -400, 0], // comes from right → moves slightly left → settles

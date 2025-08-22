@@ -28,8 +28,9 @@ html {
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
   --breakpoint-1xl: 1320px;
-  --breakpoint-2xl: 1536px;
-  --breakpoint-3xl: 1658px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1536px;
+  --breakpoint-4xl: 1658px;
 
   /*── COLORS ───────────────────────────────────────────────────*/
   --color-theme: #f7b529;
@@ -42,6 +43,8 @@ html {
   --shadow-courseBoxShadow: 0px 0px 3px 0px #0000002b;
   --shadow-yearBoxShadow: 0px 0px 9px 0px #0000001f;
   --shadow-webinarBoxShadow: 0px 0px 8px 0px #0000001a;
+  --shadow-certificateShadow: 0px 0px 7px 0px #0000002b;
+  --shadow-reviewBoxShadow: 0px 0px 16px 0px #0000001c;
 }
 
 ::-webkit-scrollbar {

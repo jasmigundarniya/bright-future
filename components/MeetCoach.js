@@ -6,7 +6,7 @@ const MeetCoach = ({ id }) => {
   return (
     <div
       id={id}
-      className="px-5 container mx-auto grid grid-cols-2 gap-5 py-10 items-center"
+      className="px-5 container mx-auto grid grid-cols-1 xl:grid-cols-2 gap-5 py-10 items-center"
     >
       <ScrollAnimationWrapper direction="left">
         <div className="relative flex justify-center md:justify-start w-[424px]">
