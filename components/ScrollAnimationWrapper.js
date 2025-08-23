@@ -25,6 +25,7 @@ const ScrollAnimationWrapper = ({
   delay = 0,
 }) => {
   return (
+    <div>
     <motion.div
       initial="hidden"
       whileInView="visible"
@@ -35,6 +36,7 @@ const ScrollAnimationWrapper = ({
     >
       {children}
     </motion.div>
+    </div>
   );
 };
 
